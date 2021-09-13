@@ -20,7 +20,7 @@ gem "redis", "~> 4.0"
 
 gem "ahoy_matey"
 gem "cssbundling-rails", github: "rails/cssbundling-rails"
-gem "devise"
+gem "devise", github: "strobilomyces/devise", branch: "patch-1"
 gem "friendly_id"
 gem "hotwire-rails"
 gem "jsbundling-rails", github: "rails/jsbundling-rails"

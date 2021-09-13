@@ -2,8 +2,16 @@
   "name": "spelunk",
   "private": true,
   "dependencies": {
+    "@rails/actioncable": "^6.0.0",
     "@rails/ujs": "^6.0.0",
-    "@rails/actioncable": "^6.0.0"
+    "esbuild": "^0.12.27",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "postcss-preset-env": "^6.7.0"
   },
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "scripts": {
+    "build": "esbuild app/javascript/*.* --bundle --outdir=app/assets/builds",
+    "build:css": "postcss ./app/assets/stylesheets/application.postcss.css -o ./app/assets/builds/application.css"
+  }
 }
