@@ -11,14 +11,30 @@ gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
 # Use SCSS for stylesheets
 gem "sass-rails", ">= 6"
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-# gem "webpacker", "~> 5.0"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jbuilder", "~> 2.7"
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem "redis", "~> 4.0"
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+gem "ahoy_matey"
+gem "cssbundling-rails", github: "rails/cssbundling-rails"
+gem "devise"
+gem "friendly_id"
+gem "hotwire-rails"
+gem "jsbundling-rails", github: "rails/jsbundling-rails"
+gem "name_of_person"
+gem "pagy"
+gem "pg_query"
+gem "pretender"
+gem "pundit"
+gem "serviceworker-rails"
+gem "strong_migrations"
+gem "sidekiq"
+gem "validates_timeliness", "~> 6.0.0.alpha1"
+gem "view_component", require: "view_component/engine"
+gem "whenever", require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.4", require: false
@@ -26,17 +42,18 @@ gem "bootsnap", ">= 1.4.4", require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "prosopite"
 end
 
 group :development do
+  gem "annotate", github: "vasfed/annotate_models", branch: "rails6_warning"
+  gem "better_errors"
+  gem "binding_of_caller"
+
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem "web-console", github: "rails/web-console"
-  # Display performance information such as SQL time and flame graphs for each request in your browser.
-  # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
-  gem "rack-mini-profiler", "~> 2.0"
-  gem "listen", "~> 3.3"
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem "spring"
+
+  gem "standard"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

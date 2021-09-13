@@ -1,4 +1,20 @@
 GIT
+  remote: https://github.com/rails/cssbundling-rails.git
+  revision: 9b3b7eaa2f66880901823bc6fb0d248ba8beb3d4
+  specs:
+    cssbundling-rails (0.1.6)
+      railties (>= 6.0.0)
+      sprockets-rails (>= 2.0.0)
+
+GIT
+  remote: https://github.com/rails/jsbundling-rails.git
+  revision: 4bc1de4b4cf4853c53c5b540043402f102ad26a9
+  specs:
+    jsbundling-rails (0.1.4)
+      railties (>= 6.0.0)
+      sprockets-rails (>= 2.0.0)
+
+GIT
   remote: https://github.com/rails/rails.git
   revision: 366c8f081d8b7fe22672b36f243eccb956904ff5
   branch: main
@@ -94,27 +110,64 @@ GIT
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
 
+GIT
+  remote: https://github.com/vasfed/annotate_models.git
+  revision: a2cca56e2a4d56014716157234cbdf7f1b182aac
+  branch: rails6_warning
+  specs:
+    annotate (3.1.1)
+      activerecord (>= 5.0, < 7.0)
+      rake (>= 10.4, < 14.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
+    ahoy_matey (4.0.1)
+      activesupport (>= 5.2)
+      device_detector
+      safely_block (>= 0.2.1)
+    ast (2.4.2)
+    bcrypt (3.1.16)
+    better_errors (2.9.1)
+      coderay (>= 1.0.0)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
     bindex (0.8.1)
+    binding_of_caller (1.0.0)
+      debug_inspector (>= 0.0.1)
     bootsnap (1.8.1)
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.3)
+    chronic (0.10.2)
+    coderay (1.1.3)
     concurrent-ruby (1.1.9)
+    connection_pool (2.2.5)
     crass (1.0.6)
+    debug_inspector (1.1.0)
+    device_detector (1.0.5)
+    devise (4.8.0)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
+    errbase (0.2.1)
     erubi (1.10.0)
     ffi (1.15.4)
+    friendly_id (5.4.2)
+      activerecord (>= 4.0.0)
     globalid (0.5.2)
       activesupport (>= 5.0)
+    google-protobuf (3.17.3-x86_64-linux)
+    hotwire-rails (0.1.3)
+      rails (>= 6.0.0)
+      stimulus-rails
+      turbo-rails
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
-    listen (3.7.0)
-      rb-fsevent (~> 0.10, >= 0.10.3)
-      rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.12.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -125,16 +178,28 @@ GEM
     mini_mime (1.1.1)
     minitest (5.14.4)
     msgpack (1.4.2)
+    name_of_person (1.1.1)
+      activesupport (>= 5.2.0)
     nio4r (2.5.8)
     nokogiri (1.12.4-x86_64-linux)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
+    pagy (4.11.0)
+    parallel (1.20.1)
+    parser (3.0.2.0)
+      ast (~> 2.4.1)
     pg (1.2.3)
+    pg_query (2.1.0)
+      google-protobuf (>= 3.17.1)
+    pretender (0.3.4)
+      actionpack (>= 4.2)
+    prosopite (1.0.1)
     puma (5.4.0)
       nio4r (~> 2.0)
+    pundit (2.1.1)
+      activesupport (>= 3.0.0)
     racc (1.5.2)
     rack (2.2.3)
-    rack-mini-profiler (2.3.3)
-      rack (>= 1.2.0)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails-dom-testing (2.0.3)
@@ -142,10 +207,31 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.4.2)
       loofah (~> 2.3)
+    rainbow (3.0.0)
     rake (13.0.6)
-    rb-fsevent (0.11.0)
-    rb-inotify (0.10.1)
-      ffi (~> 1.0)
+    redis (4.4.0)
+    regexp_parser (2.1.1)
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
+    rexml (3.2.5)
+    rubocop (1.20.0)
+      parallel (~> 1.10)
+      parser (>= 3.0.0.0)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml
+      rubocop-ast (>= 1.9.1, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 3.0)
+    rubocop-ast (1.11.0)
+      parser (>= 3.0.1.1)
+    rubocop-performance (1.11.5)
+      rubocop (>= 1.7.0, < 2.0)
+      rubocop-ast (>= 0.4.0)
+    ruby-progressbar (1.11.0)
+    safely_block (0.3.0)
+      errbase (>= 0.1.1)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
@@ -156,7 +242,12 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    spring (3.0.0)
+    serviceworker-rails (0.6.0)
+      railties (>= 3.1)
+    sidekiq (6.2.2)
+      connection_pool (>= 2.2.2)
+      rack (~> 2.0)
+      redis (>= 4.2.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -164,31 +255,71 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    standard (1.3.0)
+      rubocop (= 1.20.0)
+      rubocop-performance (= 1.11.5)
+    stimulus-rails (0.5.1)
+      rails (>= 6.0.0)
+    strong_migrations (0.7.8)
+      activerecord (>= 5)
     thor (1.1.0)
     tilt (2.0.10)
+    timeliness (0.4.4)
+    turbo-rails (0.7.11)
+      rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    unicode-display_width (2.0.0)
+    validates_timeliness (6.0.0.alpha1)
+      timeliness (>= 0.3.10, < 1)
+    view_component (2.40.0)
+      activesupport (>= 5.0.0, < 8.0)
+      method_source (~> 1.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    whenever (1.0.0)
+      chronic (>= 0.6.3)
     zeitwerk (2.5.0.beta3)
 
 PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  ahoy_matey
+  annotate!
+  better_errors
+  binding_of_caller
   bootsnap (>= 1.4.4)
   byebug
+  cssbundling-rails!
+  devise
+  friendly_id
+  hotwire-rails
   jbuilder (~> 2.7)
-  listen (~> 3.3)
+  jsbundling-rails!
+  name_of_person
+  pagy
   pg (~> 1.1)
+  pg_query
+  pretender
+  prosopite
   puma (~> 5.0)
-  rack-mini-profiler (~> 2.0)
+  pundit
   rails!
+  redis (~> 4.0)
   sass-rails (>= 6)
-  spring
+  serviceworker-rails
+  sidekiq
+  standard
+  strong_migrations
   tzinfo-data
+  validates_timeliness (~> 6.0.0.alpha1)
+  view_component
   web-console!
+  whenever
 
 RUBY VERSION
    ruby 3.0.2p107
