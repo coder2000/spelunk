@@ -2,13 +2,18 @@ version: '3.6'
 
 services:
   db:
-    image: postgres:12.1
+    image: postgres:latest
     volumes:
       - db_data:/var/lib/postgresql/data
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      POSTGRES_PASSWORD: examplepass
+    ports:
+      - "5432:5432"
 
   redis:
-    image: redis:5.0.7
+    image: redis:latest
+    ports:
+      - "6379:6379"
 
 volumes:
   db_data:
